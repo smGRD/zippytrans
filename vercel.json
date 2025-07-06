@@ -1,16 +1,17 @@
 {
-  "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
+      "source": "/api/(.*)",
+      "destination": "https://zippytrans.onrender.com/api/$1"
     }
   ],
-  "routes": [
+  "cleanUrls": true,
+  "redirects": [
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/",
+      "destination": "/index.html",
+      "permanent": true
     }
-  ]
+  ],
+  "outputDirectory": "frontend/dist"
 }
