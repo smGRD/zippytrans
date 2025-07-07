@@ -7,11 +7,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@blackbox-vision/react-qr-reader": "^5.0.0",
     "axios": "^1.4.0",
     "qrcode.react": "^4.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-qr-reader": "^3.0.0-beta-1",
     "react-router-dom": "^6.14.1"
   },
   "devDependencies": {

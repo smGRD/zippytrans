@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { QRCodeCanvas } from "qrcode.react";
-import { QrReader } from "react-qr-reader";
+import { QrReader } from '@blackbox-vision/react-qr-reader'
 import axios from "axios";
 
 export default function QRCodePage() {
