@@ -253,8 +253,12 @@ app.post("/api/depot", (req, res) => {
   });
 });
 
-
-app.listen(PORT, () => {
-  console.log(`✅ Serveur démarré sur http://localhost:${PORT}`);
+// ✅ Route de test pour Render
+app.get("/api/ping", (req, res) => {
+  res.send("pong");
 });
 
+// ✅ Lancement du serveur
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`✅ Serveur démarré sur http://localhost:${process.env.PORT || 3000}`);
+});
