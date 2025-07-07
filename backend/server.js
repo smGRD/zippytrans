@@ -13,7 +13,11 @@ const SECRET_KEY = "ton_secret_key";
 app.use(cors());
 app.use(express.json());
 
-const dbPath = path.resolve(__dirname, "zippy.db");
+const dbPath = path.resolve(process.env.DATABASE_URL || "./data/zippy.db");
+
+if (!fs.existsSync(path.dirname(dbPath))) {
+  fs.mkdirSync(path.dirname(dbPath), { recursive: true });
+}
 
 if (!fs.existsSync(dbPath)) {
   const newDb = new sqlite3.Database(dbPath);
@@ -258,7 +262,6 @@ app.get("/api/ping", (req, res) => {
   res.send("pong");
 });
 
-// ✅ Lancement du serveur
-app.listen(process.env.PORT || 3000, () => {
-  console.log(`✅ Serveur démarré sur http://localhost:${process.env.PORT || 3000}`);
+app.listen(PORT, () => {
+  console.log(`✅ Serveur démarré sur le port ${PORT}`);
 });
