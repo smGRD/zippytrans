@@ -262,6 +262,10 @@ app.get("/api/ping", (req, res) => {
   res.send("pong");
 });
 
+app.get("/", (req, res) => {
+  res.send("🎉 Bienvenue sur l'API ZippyTrans !");
+});
+
 app.listen(PORT, () => {
   console.log(`✅ Serveur démarré sur le port ${PORT}`);
 });
